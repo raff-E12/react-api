@@ -2,13 +2,13 @@ import React from 'react'
 
 export default function Header() {
   return (
-   <header>
-      <div>
-      <div>
+   <header className='header-sc container-main flex'>
+      <div className='hd-container flex'>
+      <div className='icon-box'>
         <i className="fa-solid fa-bars"></i>
       </div>
-      <h2 className='header-sc'>BooLean Movie</h2>
-      <button>Cerca</button>
+      <h3 className='text-hero text-center'>BooLean Movie</h3>
+      <button className='btn btn-primary'>Cerca</button>
       </div>
    </header>
   )

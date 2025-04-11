@@ -33,7 +33,6 @@
   
   #root{
     width: 100%;
-    border: 2px solid red;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -44,10 +43,41 @@
   }
 
   *{
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0 0;
     box-sizing: border-box;
+  }
+
+  h1{
+    font-size: 2.986rem;
+  }
+
+  h2{
+    font-size: 2.488rem;
+  }
+
+  h3{
+    font-size: 2.074rem;
+  }
+
+  h4{
+    font-size: 1.728rem;
+  }
+
+  h5{
+    font-size: 1.44rem;
+  }
+
+  h6{
+    font-size: 1.2rem;
+  }
+
+  p, a{
+    font-size: 1rem;
+  }
+
+  small{
+    font-size: 0.833rem;
   }
 }
 
@@ -57,35 +87,35 @@
     @apply text-[16px] font-sans;
   }
 
-  h1, .h1 {
+  .h1 {
     @apply text-4xl sm:text-5xl font-bold leading-tight tracking-tight;
   }
 
-  h2, .h2 {
+  .h2 {
     @apply text-3xl sm:text-4xl font-semibold leading-snug tracking-tight;
   }
 
-  h3, .h3 {
+  .h3 {
     @apply text-2xl sm:text-3xl font-medium leading-snug tracking-normal;
   }
 
-  h4, .h4 {
+  .h4 {
     @apply text-xl font-medium leading-snug;
   }
 
-  h5, .h5 {
+  .h5 {
     @apply text-lg font-medium leading-tight;
   }
 
-  h6, .h6 {
+  .h6 {
     @apply text-base font-semibold uppercase tracking-wide;
   }
 
-  p, .text-body {
+  .text-body {
     @apply text-base text-gray-700 leading-relaxed mb-4;
   }
 
-  small, .text-small {
+  .text-small {
     @apply text-sm text-gray-500 leading-snug;
   }
 
@@ -183,7 +213,7 @@
 
   /* Responsive grid layout */
   .row {
-    @apply flex flex-wrap -mx-4;
+    @apply flex flex-wrap mx-4;
   }
 
   .col {
@@ -266,5 +296,9 @@
   /* Card */
   .card {
     @apply rounded-xl shadow-lg p-6 bg-white transition duration-200 hover:shadow-xl;
+  }
+
+  .icon-box{
+    @apply w-[40px] h-[40px] flex justify-center items-center text-white cursor-pointer;
   }
 }
