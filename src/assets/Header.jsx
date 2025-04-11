@@ -7,22 +7,21 @@ import React, { useState } from 'react'
  */
 
 
-export default function Header() {
-  const [isOpen, SetOpen] = useState(true);
+export default function Header({setOpen, isOpen}) {
 
   return (
    <header className='header-sc container-main flex relative'>
       <div className='hd-container flex'>
-      <div className='icon-box' onClick={()=>{SetOpen( value => !value)}}>
+      <div className='icon-box' onClick={()=>{setOpen( value => !value)}}>
         <i className="fa-solid fa-bars"></i>
       </div>
       <h3 className='text-hero text-center'>BooLean Movie</h3>
-      <button className='btn btn-primary'>Cerca</button>
+      <button className='btn btn-primary'>Login</button>
       </div>
       <div className={`left-menu-sc fixed flex ${isOpen ? "none" : "show"}`}>
          <div className='title-menu flex'>
              <div className='fluid reverse'>
-                <div className='icon-box' onClick={()=>{SetOpen( value => !value)}}>
+                <div className='icon-box' onClick={()=>{setOpen( value => !value)}}>
                   <i class="fa-solid fa-xmark"></i>
                 </div>
              </div>
