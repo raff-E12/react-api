@@ -1,70 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 /**
  * Descrizione:
  * @augments - Componente Header della Pagina
- * 
+ * @function SetOpen - Apertura e chiusura della sezione form
  */
 
 
 export default function Header() {
+  const [isOpen, SetOpen] = useState(true);
+
   return (
    <header className='header-sc container-main flex relative'>
       <div className='hd-container flex'>
-      <div className='icon-box'>
+      <div className='icon-box' onClick={()=>{SetOpen( value => !value)}}>
         <i className="fa-solid fa-bars"></i>
       </div>
       <h3 className='text-hero text-center'>BooLean Movie</h3>
       <button className='btn btn-primary'>Cerca</button>
       </div>
-      <div className='left-menu-sc fixed'>
-         <div className='title-menu'>
-            <h2>Aggiungi un Attore:</h2>
+      <div className={`left-menu-sc fixed flex ${isOpen ? "none" : "show"}`}>
+         <div className='title-menu flex'>
+             <div className='fluid reverse'>
+                <div className='icon-box' onClick={()=>{SetOpen( value => !value)}}>
+                  <i class="fa-solid fa-xmark"></i>
+                </div>
+             </div>
+            <h4 className='lead'>Aggiungi un Attore:</h4>
          </div>
-        <form action="#" method="POST" enctype="multipart/form-data" className='form'>
-        <fieldset className='list-form flex'>
-            <legend>Dati Attore</legend>
-
-            <div className='section-form'>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required />
-            </div>
-
-            <div className='section-form'>
-            <label for="anno_nascita">Anno di nascita:</label>
-            <input type="number" id="anno_nascita" name="anno_nascita" min="1900" max="2100" required />
-            </div>
-
-            <div className='section-form'>
-            <label for="nazionalita">Nazionalità:</label>
-            <input type="text" id="nazionalita" name="nazionalita" required />
-            </div>
-
-            <div className='section-form'>
-            <label for="biografia">Biografia:</label>
-            <textarea id="biografia" name="biografia" rows="6" required></textarea>
-            </div>
-
-            <div className='section-form'>
-            <label for="immagine">Immagine profilo:</label>
-            <input type="file" id="immagine" name="immagine" accept="image/*" required />
-            </div>
-
-            <div className='section-form'>
-            <label for="riconoscimenti">Riconoscimenti:</label>
-            <textarea id="riconoscimenti" name="riconoscimenti" rows="4"></textarea>
-            </div>
-
-            <div className='section-form'>
-            <label for="galleria">Altre immagini (opzionali):</label>
-            <input type="file" id="galleria" name="galleria[]" accept="image/*" multiple />
-            </div>
-
-            <div className='section-form'>
-            <button type="submit">Salva Attore</button>
-            </div>
-        </fieldset>
-        </form>
+       <div className='form-sc flex'>
+         <ul className='list-form flex'>
+           <li className='input-form'>
+             <label id='index-nome'>Nome:</label>
+             <input type="text" className='input' id='name-id' placeholder='Inserisci...'/>
+           </li>
+           <li className='input-form'>
+             <label id='index-born'>Nascita:</label>
+             <input type="text" className='input' id='born-id' placeholder='Inserisci...'/>
+           </li>
+           <li className='input-form'>
+             <label id='index-country'>Nazionalità:</label>
+             <input type="text" className='input' id='cont-id' placeholder='Inserisci...'/>
+           </li>
+           <li className='input-form'>
+             <label id='index-bio'>Biografia:</label>
+             <textarea name="bio-sc" id="bio-id" placeholder='Inserisci...'></textarea>
+           </li>
+           <li className='input-form'>
+             <label id='index-img'>Immagine:</label>
+             <input type="text" className='input' id='img-id' placeholder='Inserisci...'/>
+           </li>
+           <li className='input-form'>
+             <label id='index-ric'>Riconoscimenti:</label>
+             <input type="text" className='input' id='ric-id' placeholder='Inserisci...'/>
+           </li>
+           <li className='input-form'>
+             <button className='btn btn-sub'>Inserisci</button>
+           </li>
+         </ul>
+       </div>
       </div>
    </header>
   )

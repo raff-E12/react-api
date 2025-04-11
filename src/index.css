@@ -216,6 +216,10 @@
     @apply flex flex-wrap mx-4;
   }
 
+  .reverse{
+    @apply flex-row-reverse;
+  }
+
   .col {
     @apply px-4 w-full;
   }
@@ -269,6 +273,10 @@
   /* Section spacing */
   .section {
     @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  .fluid{
+    @apply flex w-full;
   }
 
   /* Typography helpers */
