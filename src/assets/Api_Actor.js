@@ -35,5 +35,6 @@ const list_local_2 = Actresses;
 export{
     handleApiCommunications,
     list_actor,
-    list_actresses
+    list_actresses,
+    list_local_1
 }

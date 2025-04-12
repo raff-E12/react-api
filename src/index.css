@@ -38,7 +38,7 @@
     justify-content: flex-start;
     flex-direction: column;
     gap: auto;
-    height: 100vh;
+    height: auto;
     text-align: center;
   }
 
@@ -220,6 +220,10 @@
     @apply flex-row-reverse;
   }
 
+  .column-flex{
+    @apply flex-col;
+  }
+
   .col {
     @apply px-4 w-full;
   }
@@ -303,7 +307,7 @@
 
   /* Card */
   .card {
-    @apply rounded-xl shadow-lg p-6 bg-white transition duration-200 hover:shadow-xl;
+    @apply rounded-xl shadow-lg p-6 bg-white transition duration-200 hover:shadow-xl gap-2;
   }
 
   .icon-box{
