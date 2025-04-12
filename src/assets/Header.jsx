@@ -7,7 +7,7 @@ import React, { useState } from 'react'
  * @function handleNewCardsParm - Implemtazione dei parametri configurati tramite la usestate
  * @function handleNewCardsAdd - controllo dei valori dell'oggetto e aggiunta di nuove card nella lista API
  * @object IsParm - Oggetto di contenimento di parametri
- * @hooks - implementazione della usestate sul controllo dei parametri
+ * @hooks - implementazione della usestate sul controllo dei parametri di input
  */
 
 
