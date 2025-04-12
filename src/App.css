@@ -207,6 +207,14 @@ body{
   .box-search.show{
     left: 0;
   }
+
+  .cards-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .cards-content{

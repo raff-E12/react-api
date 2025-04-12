@@ -19,8 +19,8 @@ export default function Cards({listsEx}) {
                 <div className='text-card flex'>
                    <h5 className='title-secondary'>{element.name}</h5>
                    <p>{element.biography}</p>
-                   <p><b>Nascita:</b> {!element.death_year ? element.birth_year : `${element.birth_year} - ${element.death_year}`}</p>
-                   <p><b>Riconoscimenti:</b> {element.awards.findIndex( value => value !== "None") ? "Nessuno" : element.awards.join(" , ")}.</p>
+                   <p><b>Nascita:</b> {!element.death_year ? element.birth_year : `${element.birth_year} - ${element.death_year}`}.</p>
+                   <p><b>Riconoscimenti:</b> {element.awards.findIndex( value => value !== "None" ) ? "Nessuno" : element.awards.join(" , ")}.</p>
                 </div>
             </div>
         )

@@ -4,6 +4,7 @@ import Header from './assets/Header'
 import SearchSc from './assets/SearchSc'
 import { handleApiCommunications } from './assets/Api_Actor'
 import ContentsCards from './assets/ContentsCards'
+import js from '@eslint/js'
 
 /**
  * Descrizione:
@@ -15,9 +16,9 @@ import ContentsCards from './assets/ContentsCards'
 function App() {
   const [isHam, setHam] = useState(true);
   const [isApi, setApi] = useState([]);
+  const [isSearch, SetSearch] = useState("");
 
-  useEffect(()=>{
-   async function Data_list() {
+  async function Data_list() {
     try {
       const data = await handleApiCommunications();
       setApi(data);
@@ -26,13 +27,21 @@ function App() {
     }
    }
 
-   Data_list()
-  },[isApi])
+   function setSearchList () {
+     console.log(isSearch);
+     const list_search = isApi.filter( list => list.name.includes(isSearch));
+     console.log(list_search);
+     const validate_result = JSON.stringify(isApi) === JSON.stringify(list_search); // Confronto tra due valori di espressi un json restituito.
+     setApi( list => {return list_search.length === 0 || validate_result ? list : list_search})
+   }
+
+  useEffect(() => { Data_list() }, [isSearch]);
+  useEffect(() =>{ if (isSearch !== "") return setSearchList() }, [isApi])
 
   return (
     <>
     <Header setOpen={setHam} isOpen={isHam}/>
-    <SearchSc Ham={isHam} />
+    <SearchSc Ham={isHam} searchValue={isSearch} SetSearch={SetSearch}/>
     <ContentsCards list={isApi}/>
     </>
   )
