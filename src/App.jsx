@@ -4,13 +4,12 @@ import Header from './assets/Header'
 import SearchSc from './assets/SearchSc'
 import { handleApiCommunications } from './assets/Api_Actor'
 import ContentsCards from './assets/ContentsCards'
-import js from '@eslint/js'
 
 /**
  * Descrizione:
- * @function isHam|setHam - esportazione di funzione in base al apertura del form
- * @function isApi|SetApi - Trasporta la chiamata api nell'array per poi passarlo al componente "ContentsCards"
- * 
+ * @function isHam|setHam - esportazione di funzione in base al apertura del form.
+ * @function Data_list - Trasporta la chiamata api nell'array per poi passarlo al componente "ContentsCards".
+ * @function setSearchList - Implementazione di ricerca sulle relative card partendo dal nome.
  */
 
 function App() {
@@ -28,9 +27,9 @@ function App() {
    }
 
    function setSearchList () {
-     console.log(isSearch);
+    //  console.log(isSearch);
      const list_search = isApi.filter( list => list.name.includes(isSearch));
-     console.log(list_search);
+    //  console.log(list_search);
      const validate_result = JSON.stringify(isApi) === JSON.stringify(list_search); // Confronto tra due valori di espressi un json restituito.
      setApi( list => {return list_search.length === 0 || validate_result ? list : list_search})
    }
@@ -40,8 +39,8 @@ function App() {
 
   return (
     <>
-    <Header setOpen={setHam} isOpen={isHam}/>
-    <SearchSc Ham={isHam} searchValue={isSearch} SetSearch={SetSearch}/>
+    <Header setOpen={setHam} isOpen={isHam} setsList={setApi} Api={isApi}/>
+    <SearchSc searchValue={isSearch} SetSearch={SetSearch}/>
     <ContentsCards list={isApi}/>
     </>
   )

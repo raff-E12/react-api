@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
  * @function Ham - Esportazione del valore e alternazione di chiusura con la sezione form
  */
 
-export default function SearchSc({Ham, searchValue, SetSearch}) {
+export default function SearchSc({searchValue, SetSearch}) {
     const [isOpen, setOpen] = useState(true);
 
     const handleInputValueimport = () =>{
@@ -19,7 +19,7 @@ export default function SearchSc({Ham, searchValue, SetSearch}) {
     <div className='btn btn-search flex' onClick={() => {setOpen( value => !value)}}>
       <i class="fa-solid fa-magnifying-glass"></i>
     </div>
-    <div className={`container-main box-search rounded-2xl ${isOpen || !Ham ? "none" : "show"}`}>
+    <div className={`container-main box-search rounded-2xl ${isOpen ? "none" : "show"}`}>
         <input type="text" name="search-box" id="search-id" placeholder='Cerca...'/>
         <button className='btn btn-inp' onClick={()=>{handleInputValueimport()}}>Add</button>
     </div>
