@@ -243,3 +243,8 @@ body{
   justify-content: flex-start;
   text-align: left;
 }
+
+::selection{
+  background-color: var(--color-success);
+  color: var(--color-bg);
+}
