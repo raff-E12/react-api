@@ -13,20 +13,24 @@ import axios from 'axios'
 
 function App() {
   const [isHam, setHam] = useState(true);
-  const [isApi, setApi] = useState(null);
+  const [isApi, setApi] = useState([]);
 
   useEffect(()=>{
    async function Data_list() {
     try {
       const data = await handleApiCommunications();
-      setApi(data);
-      console.log(isApi);
+      // setApi([data]);
+      isApi.push(data);
     } catch (error) {
       console.log(error);
     }
    }
 
    Data_list()
+  },[])
+
+  useEffect(()=>{
+    console.log(isApi)
   },[])
 
   return (
