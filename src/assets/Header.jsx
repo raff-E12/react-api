@@ -108,15 +108,15 @@ export default function Header({setOpen, isOpen, setsList, Api}) {
          <ul className='list-form flex'>
            <li className='input-form'>
              <label id='index-nome'>Nome e Cognome:</label>
-             <input type="text" className='input' id='name-id' value={isName} placeholder='Inserisci...' onChange={handleNewCardsParm}/>
+             <input type="text" className='input' id='name-id' value={isName} placeholder='Es: Mario Rossi' onChange={handleNewCardsParm}/>
            </li>
            <li className='input-form'>
              <label id='index-born'>Anno di Nascita:</label>
-             <input type="text" className='input' id='born-id' value={isBirth} placeholder='Inserisci...' onChange={handleNewCardsParm}/>
+             <input type="text" className='input' id='born-id' value={isBirth} placeholder='Es: 1999' onChange={handleNewCardsParm}/>
            </li>
            <li className='input-form'>
              <label id='index-country'>Nazionalità:</label>
-             <input type="text" className='input' id='cont-id' value={isNation} placeholder='Inserisci...' onChange={handleNewCardsParm}/>
+             <input type="text" className='input' id='cont-id' value={isNation} placeholder='Es: New-York' onChange={handleNewCardsParm}/>
            </li>
            <li className='input-form'>
              <label id='index-bio'>Biografia:</label>
@@ -124,15 +124,15 @@ export default function Header({setOpen, isOpen, setsList, Api}) {
            </li>
            <li className='input-form'>
              <label id='index-img'>Immagine:</label>
-             <input type="text" className='input' value={isImg} id='img-id' placeholder='Inserisci...' onChange={handleNewCardsParm}/>
+             <input type="text" className='input' value={isImg} id='img-id' placeholder='Es: https://...' onChange={handleNewCardsParm}/>
            </li>
            <li className='input-form'>
              <label id='index-ric'>Riconoscimenti:</label>
-             <input type="text" className='input' value={isAward} id='ric-id' placeholder='Inserisci...' onChange={handleNewCardsParm}/>
+             <input type="text" className='input' value={isAward} id='ric-id' placeholder='Es: Academy Awards' onChange={handleNewCardsParm}/>
            </li>
            <li className='input-form'>
              <label id='index-ric'>Anno di Decesso:</label>
-             <input type="text" className='input' value={isDeath} id='death-id' placeholder='Inserisci...' onChange={handleNewCardsParm}/>
+             <input type="text" className='input' value={isDeath} id='death-id' placeholder='Es: None o 1999' onChange={handleNewCardsParm}/>
            </li>
            <li className='input-form'>
              <button className='btn btn-sub' onClick={() => {handleNewCardsAdd()}}>Inserisci</button>
