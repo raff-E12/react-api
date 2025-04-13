@@ -15,7 +15,7 @@ import axios from "axios";
 import Actors from "./Actors.json"
 import Actresses from "./Actresses.json"
 
-const list_actresses = "https://dummyjson.com/c/2b76-4cd5-41b3-b2a2";
+const list_actresses = "https://dummyjson.com/c/5924-c8c4-4dde-86f2";
 const list_actor =  "https://dummyjson.com/c/94b3-0476-40e6-b73b";
 const old_actors_api = " https://freetestapi.com/api/v1/actresses"; // risposta negata in errore (rif: cookies).
 const list_poke_test = "https://pokeapi.co/api/v2/pokemon/ditto";
@@ -32,8 +32,19 @@ const list_local_2 = Actresses;
       }
 }
 
+async function secondCommunications(){
+  try {
+      const response = await axios.get(list_actresses);
+      return response.data;
+    } catch (error) {
+      console.error("Log dell'errore:", error);
+      return error
+    }
+}
+
 export{
     handleApiCommunications,
+    secondCommunications,
     list_actor,
     list_actresses,
     list_local_1

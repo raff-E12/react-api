@@ -20,9 +20,9 @@ Mostriamo in pagina una card per ciascun attore, con grafica a piacimento!
 
 # Bonus:
 
-# BONUS 1 :rilassato:*
+# BONUS 1 - rilassato:
 Stampare sia una lista delle attrici che degli attori, separatamente.
-# BONUS 2 :occhiali_da_sole:*
+# BONUS 2 - occhiali_da_sole:
 Stampare un’unica lista che contiene attori e attrici insieme!
-# BONUS 3* :testa_che_esplode:
+# BONUS 3 - testa_che_esplode:
 Inserire un filtro di ricerca che permetta di cercare gli attori o le attrici per nome.

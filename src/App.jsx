@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './assets/Header'
 import SearchSc from './assets/SearchSc'
-import { handleApiCommunications } from './assets/Api_Actor'
+import { handleApiCommunications, secondCommunications } from './assets/Api_Actor'
 import ContentsCards from './assets/ContentsCards'
 
 /**
@@ -20,7 +20,9 @@ function App() {
   async function Data_list() {
     try {
       const data = await handleApiCommunications();
-      setApi(data);
+      const data_2 = await secondCommunications();
+      const update_list = [...data, ...data_2];
+      setApi(update_list);
     } catch (error) {
       console.log(error);
     }
@@ -30,8 +32,9 @@ function App() {
     //  console.log(isSearch);
      const list_search = isApi.filter( list => list.name.includes(isSearch));
     //  console.log(list_search);
-     const validate_result = JSON.stringify(isApi) === JSON.stringify(list_search); // Confronto tra due valori di espressi un json restituito.
-     setApi( list => {return list_search.length === 0 || validate_result ? list : list_search})
+    window.alert("Ricerca in esecuzione...")
+    const validate_result = JSON.stringify(isApi) === JSON.stringify(list_search); // Confronto tra due valori di espressi un json restituito.
+    setApi( list => {return list_search.length === 0 || validate_result ? list : list_search})
    }
 
   useEffect(() => { Data_list() }, [isSearch]);
